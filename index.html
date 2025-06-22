@@ -7,9 +7,14 @@
     <title>Etch A Sketch</title>
 </head>
 <body>
-<div class="gridcontainer"></div>
+    <div class="centralcontainer">
+        <button class="createbtn"></button>
+        <div class="gridcontainer"></div>
+    </div>
+
     <script>
         let containergrid = document.querySelector(".gridcontainer");
+let maincontainer = document.querySelector(".centralcontainer");
 
         for(let i =0;i<16*16;i++)
     {
@@ -20,8 +25,15 @@ gridsquare.addEventListener("mouseenter",()=>{
     gridsquare.classList.add("pink");
 })
     }
-        
-
+        let createbtn = document.querySelector(".createbtn");
+        createbtn.textContent = "Create a New Grid";
+        createbtn.style.width = "50%";
+createbtn.addEventListener("click",()=>{
+    let rowleft = prompt("enter the number of squares per left side of grid");
+     let rowtop = prompt("enter the number of squares per top side of grid");
+let total = rowleft*rowtop;
+alert (total);
+})
     </script>
 </body>
 </html>
