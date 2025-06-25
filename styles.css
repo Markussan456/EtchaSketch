@@ -2,7 +2,10 @@
     box-sizing: border-box;
 }
 
-
+:root {
+   
+    --boxbottom:6.25%;
+}
 .centralcontainer{
     display: flex;
     border: 2px solid violet;
@@ -15,13 +18,13 @@
     display: flex;
     border: 2px solid black;
     width: 960px;
-  
+  height: 700px;
     flex-wrap: wrap;
 }
 .gridsquare{
-    border: solid 2px green;
-    width: 6.25%;
-    height: 20px;
+   
+    width:var(--boxbottom);
+   
 }
 .pink{
     background-color: pink;

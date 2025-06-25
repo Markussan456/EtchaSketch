@@ -15,8 +15,9 @@
     <script>
         let containergrid = document.querySelector(".gridcontainer");
 let maincontainer = document.querySelector(".centralcontainer");
-
-        for(let i =0;i<16*16;i++)
+function creategrid(number1,number2)
+{
+       for(let i =0;i<number1*number2;i++)
     {
 let gridsquare = document.createElement("div");
 containergrid.appendChild(gridsquare);
@@ -25,14 +26,29 @@ gridsquare.addEventListener("mouseenter",()=>{
     gridsquare.classList.add("pink");
 })
     }
+
+}
+ creategrid(16,16);
         let createbtn = document.querySelector(".createbtn");
         createbtn.textContent = "Create a New Grid";
         createbtn.style.width = "50%";
 createbtn.addEventListener("click",()=>{
     let rowleft = prompt("enter the number of squares per left side of grid");
      let rowtop = prompt("enter the number of squares per top side of grid");
-let total = rowleft*rowtop;
-alert (total);
+if(rowleft < 100 && rowtop < 100)
+{
+    let percentagewidth = (100 / rowleft)+"%";
+    
+  
+containergrid.innerHTML = "";
+creategrid(rowleft,rowtop);
+
+    document.documentElement.style.setProperty("--boxbottom",percentagewidth);
+}
+else {
+    alert("Please choose numbers lower than 100")
+}
+
 })
     </script>
 </body>
