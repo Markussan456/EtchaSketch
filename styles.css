@@ -1,0 +1,28 @@
+* {
+    box-sizing: border-box;
+}
+
+
+.centralcontainer{
+    display: flex;
+    border: 2px solid violet;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding:  10px;
+}
+.gridcontainer{
+    display: flex;
+    border: 2px solid black;
+    width: 960px;
+  
+    flex-wrap: wrap;
+}
+.gridsquare{
+    border: solid 2px green;
+    width: 6.25%;
+    height: 20px;
+}
+.pink{
+    background-color: pink;
+}
