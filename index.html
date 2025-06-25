@@ -22,8 +22,17 @@ function creategrid(number1,number2)
 let gridsquare = document.createElement("div");
 containergrid.appendChild(gridsquare);
 gridsquare.classList.add("gridsquare");
+
 gridsquare.addEventListener("mouseenter",()=>{
-    gridsquare.classList.add("pink");
+    
+    let currentopacity = parseFloat(gridsquare.style.opacity) || 0;
+    currentopacity += 0.1;
+    if (currentopacity > 0 && currentopacity < 1)
+{
+gridsquare.style.opacity = currentopacity;
+}
+    
+    gridsquare.style.backgroundColor = randcolor();
 })
     }
 
@@ -50,6 +59,13 @@ else {
 }
 
 })
+function randcolor()
+{
+    const r = Math.floor(Math.random()*256);
+    const g = Math.floor(Math.random()*256);
+    const b = Math.floor(Math.random()*256);
+   return `rgb(${r}, ${g}, ${b})`;
+}
     </script>
 </body>
 </html>
